@@ -1,0 +1,31 @@
+# Mini Sistema de Gestión de Licitaciones
+
+Este proyecto es un **dashboard interactivo** desarrollado con **Streamlit** y **PostgreSQL**.
+
+## Características
+
+- Registro de nuevas licitaciones con **ID manual** y fecha de adjudicación.  
+- Selección de productos y cantidades para cada licitación.  
+- Cálculo automático de márgenes por producto y por licitación.  
+- Visualización de resumen de licitaciones y detalle de productos.  
+- Integración con **PostgreSQL** para almacenamiento persistente.  
+
+## Tecnologías utilizadas
+
+- **Python 3.11+**  
+- **Streamlit** para la interfaz web interactiva  
+- **Pandas** para manipulación de datos  
+- **psycopg2** para conexión con PostgreSQL  
+- **dotenv** para manejar variables de entorno  
+- **PostgreSQL / Supabase** como base de datos  
+
+## Estructura de tablas
+
+### Tabla `tender` (licitaciones)
+
+```sql
+CREATE TABLE IF NOT EXISTS tender (
+    id TEXT PRIMARY KEY,                 -- ID tal cual viene del endpoint o formulario
+    cliente TEXT NOT NULL,               -- client
+    fecha_adjudicacion DATE NOT NULL     -- creation_date del endpoint
+);
