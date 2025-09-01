@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS tender (
     fecha_adjudicacion DATE NOT NULL     -- creation_date del endpoint
 );
 
+### Tabla `product` (licitaciones)
+
 -- Tabla product
 CREATE TABLE IF NOT EXISTS product (
     id BIGINT PRIMARY KEY,               -- SKU del producto como ID
@@ -40,6 +42,8 @@ CREATE TABLE IF NOT EXISTS product (
     precio_venta NUMERIC NOT NULL CHECK (precio_venta > 0),  -- price
     costo_unitario NUMERIC NOT NULL CHECK (costo_unitario > 0) -- cost
 );
+
+### Tabla `order` (licitaciones)
 
 -- Tabla order (detalle de licitación)
 CREATE TABLE IF NOT EXISTS "order" (
